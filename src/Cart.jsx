@@ -10,8 +10,13 @@ function Cart() {
 
 
     function order(){
-        (cartItems.length > 0)  ? document.getElementById("order").textContent= "Ordering..." : document.getElementById("order").textContent= "keine Order"
-        setTimeout(showPayment,3000)
+        if (cartItems.length > 0) {
+            document.getElementById("order").textContent= "Ordering..."
+            setTimeout(showPayment,3000)
+        } else {
+            document.getElementById("order").textContent= "keine Order"   
+        }
+        
     }
     function showPayment(){
         // console.log("Order placed")
